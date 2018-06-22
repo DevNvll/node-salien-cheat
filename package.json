@@ -1,0 +1,17 @@
+{
+  "name": "node-salien-cheat",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "files": [
+    "index.js",
+    "token.txt",
+    "cacert.pem"
+  ],
+  "author": "Henrick Mello",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "qs": "^6.5.2"
+  }
+}
