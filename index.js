@@ -50,6 +50,11 @@ async function sendGET(method, data) {
   return res.data.response
 }
 
+async function RepresentGroup(clanid) {
+  Log('Representing group: ' + clanid)
+  await sendPOST('ITerritoryControlMinigameService/RepresentClan', { clanid })
+}
+
 async function GetFirstAvailablePlanet() {
   const { planets } = await sendGET('GetPlanets', 'active_only=1')
 
@@ -163,7 +168,7 @@ function Log(msg) {
 
 async function init() {
   const id = await GetFirstAvailablePlanet()
-
+  await RepresentGroup(process.env.GROUP || 4777282)
   let currentPlanet
   await JoinPlanet(id)
 
